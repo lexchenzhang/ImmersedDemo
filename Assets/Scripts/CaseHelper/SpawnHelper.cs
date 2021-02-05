@@ -14,7 +14,7 @@ namespace com.Immersed.Lex.Helper
         public GameObject SpawnProfessor()
         {
             GameObject prof = Instantiate(_professorPrefab,
-                new Vector3(Random.Range(genOffset, -genOffset), .25f, Random.Range(genOffset, -genOffset)),
+                new Vector3(0, .25f, 0),
                 Quaternion.identity);
             return prof;
         }

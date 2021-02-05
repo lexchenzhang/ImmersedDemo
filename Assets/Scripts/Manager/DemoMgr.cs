@@ -41,24 +41,20 @@ namespace com.Immersed.Lex.Manager
         private void SetupScene()
         {
             GameObject prof = _spawnHelper.SpawnProfessor();
-            RegisterEvents(prof);
+            AddToDic(prof);
             for (int i = 0; i < StudentNumer; i++)
             {
                 GameObject student = _spawnHelper.SpawnStudent();
-                RegisterEvents(student);
+                AddToDic(student);
+                student.GetComponent<IRole>().RegisterEvent(prof);
             }
         }
 
-        private void RegisterEvents(GameObject obj)
+        private void AddToDic(GameObject obj)
         {
             IRole role = obj.GetComponent<IRole>();
             role.uid = obj_counter;
             _positionData.Add(role.uid, obj);
-            foreach (KeyValuePair<int, GameObject> player in PositionData._playerDic)
-            {
-                if (player.Key == role.uid) continue;
-                role.RegisterEvent(player.Value.GetComponent<IRole>());
-            }
             AddCounter();
         }
 

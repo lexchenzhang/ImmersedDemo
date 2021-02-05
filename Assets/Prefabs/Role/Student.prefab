@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7752471051584933098}
   - component: {fileID: 1450256433978969210}
   - component: {fileID: 2440633612252987471}
+  - component: {fileID: 1475836010963195974}
   m_Layer: 0
   m_Name: Student
   m_TagString: Untagged
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: da337a0ee07594332b8b44939fb8ca19, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -130,5 +131,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 223e31e4d089d4fe587d0505faaad93f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1475836010963195974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9124692079955929326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a2364e967ef48a9b008e97aae61290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
