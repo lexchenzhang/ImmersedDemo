@@ -5,7 +5,7 @@ namespace com.Immersed.Lex.System.Data
 {
     public class PositionData : MonoBehaviour
     {
-        public static Dictionary<int, GameObject> _playerDic = new Dictionary<int, GameObject>();
+        private static Dictionary<int, GameObject> _playerDic = new Dictionary<int, GameObject>();
 
         public void Add(int _uid, GameObject _obj)
         {

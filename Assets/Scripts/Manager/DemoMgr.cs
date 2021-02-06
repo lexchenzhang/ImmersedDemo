@@ -10,7 +10,7 @@ namespace com.Immersed.Lex.Manager
     {
         [Range (0, 100)]
         public int StudentNumer;
-        static int obj_counter { get; set; }
+        private static int ObjCounter { get; set; }
         private SpawnHelper _spawnHelper;
         private PositionData _positionData;
 
@@ -21,15 +21,9 @@ namespace com.Immersed.Lex.Manager
             SetupScene();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         private void AddCounter()
         {
-            obj_counter++;
+            ObjCounter++;
         }
 
         private void InitCom()
@@ -53,7 +47,7 @@ namespace com.Immersed.Lex.Manager
         private void AddToDic(GameObject obj)
         {
             IRole role = obj.GetComponent<IRole>();
-            role.uid = obj_counter;
+            role.uid = ObjCounter;
             _positionData.Add(role.uid, obj);
             AddCounter();
         }

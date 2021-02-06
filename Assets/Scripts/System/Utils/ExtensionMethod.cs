@@ -25,5 +25,12 @@ namespace com.Immersed.Lex.System.Utils
         {
             return Vector3.Dot(queried, forward) < 0f;
         }
+
+        public static bool IsVisible(this Vector3 src_v, Vector3 des_v, Vector3 forward, float angle)
+        {
+            float _cosAngle = Vector3.Dot((des_v - src_v).normalized, forward);
+            float _angle = Mathf.Acos(_cosAngle) * Mathf.Rad2Deg;
+            return _angle < angle;
+        }
     }
 }

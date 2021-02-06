@@ -7,6 +7,9 @@ namespace com.Immersed.Lex.Role
 {
     public class Professor : MonoBehaviour, IRole
     {
+        [SerializeField]
+        [Range(30, 60)]
+        private float visibleAngle;
         private PositionSender _positionSender;
         private PositionData _positionData;
 
@@ -38,19 +41,13 @@ namespace com.Immersed.Lex.Role
             GameObject obj = _positionData.GetObjByUID(_uid);
             Material _mat = obj.GetComponent<Renderer>().material;
             Color _color = _mat.color;
-            _mat.SetColor("_Color", new Color(_color.r, _color.g, _color.b, transform.position.IsBehind(_trans.position) ? 0.1f : 1f));
+            bool _isVisible = transform.position.IsVisible(_trans.position, transform.forward, visibleAngle);
+            _mat.SetColor("_Color", new Color(_color.r, _color.g, _color.b, _isVisible ? 1f : .1f));
         }
 
-        // Start is called before the first frame update
         void Awake()
         {
             Init();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            //Move();
         }
 
         private void OnDrawGizmos()

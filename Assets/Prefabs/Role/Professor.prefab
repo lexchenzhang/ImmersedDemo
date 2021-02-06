@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cbdcdea930a46e981f28092275d6a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visibleAngle: 45
 --- !u!114 &1450256433978969210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,4 +182,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e25f1c5e7e3b4459a571b0a943e1edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seats: []

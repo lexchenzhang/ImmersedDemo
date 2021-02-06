@@ -7,7 +7,7 @@ namespace com.Immersed.Lex.System.Position
     {
         public void OnReceiveMovement(int _uid, Transform _transform)
         {
-            this.GetComponent<IRole>().SetVisible(_uid, _transform);
+            GetComponent<IRole>().SetVisible(_uid, _transform);
         }
     }
 }

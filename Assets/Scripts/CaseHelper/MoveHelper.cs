@@ -6,10 +6,9 @@ namespace com.Immersed.Lex.Helper
 {
     public class MoveHelper : MonoBehaviour
     {
-        public GameObject[] seats;
+        private GameObject[] seats;
         private NavMeshAgent _agent;
 
-        // Start is called before the first frame update
         void Awake()
         {
             Init();
@@ -19,11 +18,7 @@ namespace com.Immersed.Lex.Helper
         {
             _agent = GetComponent<NavMeshAgent>();
             seats = new GameObject[4];
-            for(int i=0;i<4;i++)
-            {
-                seats[i] = GameObject.Find("des" + i);
-                Debug.Log(seats[i].transform.position);
-            }
+            for(int i=0;i<4;i++) seats[i] = GameObject.Find("des" + i);
             StartCoroutine(MoveTo());
         }
 
@@ -34,12 +29,6 @@ namespace com.Immersed.Lex.Helper
                 _agent.SetDestination(seats[Random.Range(0, 3)].transform.position);
                 yield return new WaitForSeconds(3);
             }
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
     }
 }
