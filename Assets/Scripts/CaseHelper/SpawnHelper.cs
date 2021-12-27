@@ -5,9 +5,7 @@ namespace com.Immersed.Lex.Helper
 {
     public class SpawnHelper : MonoBehaviour
     {
-        [SerializeField]
-        [Range(1, 5)]
-        private float genOffset;
+        [SerializeField] [Range(1, 5)] private float _genOffset;
         [SerializeField] private GameObject _professorPrefab;
         [SerializeField] private GameObject _studentPrefab;
 
@@ -22,7 +20,7 @@ namespace com.Immersed.Lex.Helper
         public GameObject SpawnStudent()
         {
             GameObject student = Instantiate(_studentPrefab,
-                new Vector3(Random.Range(genOffset, -genOffset), .25f, Random.Range(genOffset, -genOffset)),
+                new Vector3(Random.Range(_genOffset, -_genOffset), .25f, Random.Range(_genOffset, -_genOffset)),
                 Quaternion.identity);
             return student;
         }

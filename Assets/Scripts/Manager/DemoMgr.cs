@@ -2,14 +2,12 @@
 using com.Immersed.Lex.Helper;
 using com.Immersed.Lex.Role;
 using com.Immersed.Lex.System.Data;
-using System.Collections.Generic;
 
 namespace com.Immersed.Lex.Manager
 {
     public class DemoMgr : MonoBehaviour
     {
-        [Range (0, 100)]
-        public int StudentNumer;
+        [SerializeField] [Range (0, 100)] private int _studentNumer;
         private static int ObjCounter { get; set; }
         private SpawnHelper _spawnHelper;
         private PositionData _positionData;
@@ -36,7 +34,7 @@ namespace com.Immersed.Lex.Manager
         {
             GameObject prof = _spawnHelper.SpawnProfessor();
             AddToDic(prof);
-            for (int i = 0; i < StudentNumer; i++)
+            for (int i = 0; i < _studentNumer; i++)
             {
                 GameObject student = _spawnHelper.SpawnStudent();
                 AddToDic(student);

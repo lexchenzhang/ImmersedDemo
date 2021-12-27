@@ -7,9 +7,7 @@ namespace com.Immersed.Lex.Role
 {
     public class Professor : MonoBehaviour, IRole
     {
-        [SerializeField]
-        [Range(30, 60)]
-        private float visibleAngle;
+        [SerializeField] [Range(30, 60)] private float _visibleAngle;
         private PositionSender _positionSender;
         private PositionData _positionData;
 
@@ -41,7 +39,7 @@ namespace com.Immersed.Lex.Role
             GameObject obj = _positionData.GetObjByUID(_uid);
             Material _mat = obj.GetComponent<Renderer>().material;
             Color _color = _mat.color;
-            bool _isVisible = transform.position.IsVisible(_trans.position, transform.forward, visibleAngle);
+            bool _isVisible = transform.position.IsVisible(_trans.position, transform.forward, _visibleAngle);
             _mat.SetColor("_Color", new Color(_color.r, _color.g, _color.b, _isVisible ? 1f : .1f));
         }
 
