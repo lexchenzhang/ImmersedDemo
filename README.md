@@ -7,3 +7,6 @@ A simple version of a dynamic occlusion culling system by using SOLID principles
 ## About
 
 This approach can achieve by using much fewer codes, but I designed it in this way to make it scalable and can be easily adapt to networking broadcast.
+
+## Build and Run
+Open the LectureScene in the Scenes folder, click the run.
